@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h3 class="center-align light-blue-text text-darken-4">
+    BMI Calculator
+</h3>
+<div class="calculator">
+    <div class="input-group">
+        <label for="weight">Weight (kg):</label>
+        <input type="text" id="weight">
+    </div>
+    <div class="input-group">
+        <label for="height">Height (cm):</label>
+        <input type="text" id="height">
+    </div>
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <button class="clear-button" onclick="clearResults()">Clear</button>
+    <div id="result"></div>
+</div>
+
+<h3 class="center-align light-blue-text text-darken-4">Sleep Pattern Calculator</h3>
+<div class="calculator">
+    <h5>How many hours did you sleep last night?</h5>
+    <input type="number" id="hoursSlept" min="0" max="24">
+    <button onclick="analyzeSleep()">Analyse</button>
+    <button class="clear-button" onclick="clearResults()">Clear</button>
+    <p id="feedback"></p>
+</div>
+
+{% endblock %}

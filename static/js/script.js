@@ -74,6 +74,23 @@ function calculateBMI() {
         document.getElementById("result").innerHTML = "";
   }
 
+// Sleep App 
 
+function analyzeSleep() {
+    const hoursSlept = parseFloat(document.getElementById('hoursSlept').value);
+    let feedback = '';
 
-  
+    if (isNaN(hoursSlept)) {
+      feedback = 'Please enter a valid number of hours.';
+    } else if (hoursSlept < 0 || hoursSlept > 24) {
+      feedback = 'Please enter a number between 0 and 24.';
+    } else if (hoursSlept >= 7 && hoursSlept <= 9) {
+      feedback = 'You got a good amount of sleep!';
+    } else if (hoursSlept < 7) {
+      feedback = 'You may need more sleep for optimal health.';
+    } else {
+      feedback = 'You may have overslept. Try adjusting your sleep schedule.';
+    }
+
+    document.getElementById('feedback').textContent = feedback;
+  }

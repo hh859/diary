@@ -179,6 +179,18 @@ def sport():
     return render_template("sport.html", categories=categories)
 
 
+@app.route("/heatlh", methods=["GET", "POST"])
+def health():
+    if request.method == "POST":
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        
+        mongo.db.tasks.insert_one(task)
+        flash("Task Successfully Added")
+        return redirect(url_for("get_tasks"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("health.html", categories=categories)
+
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
     if request.method == "POST":
