@@ -1,14 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">New Entry</h3>
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel red lighten-5">
+            <h3 class="black-text text-darken-4 center-align">New Entry</h3>
+        </div>
+    </div>
+</div>
 
-<div class="row card-panel grey lighten-5">
+<div class="row card-panel amber lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_task') }}">
         <!-- category selection -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text darken-4"></i>
+                <i class="fas fa-folder-open prefix cyan-text darken-4"></i>
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Choose Category</option>
                     {% for category in categories %}
@@ -21,7 +27,7 @@
         <!-- task name -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-pencil-alt prefix light-blue-text darken-4"></i>
+                <i class="fas fa-pencil-alt prefix cyan-text darken-4"></i>
                 <input id="task_name" name="task_name" minlength="5" maxlength="50" 
                     type="text" class="validate" required>
                 <label for="task_name">Name</label>
@@ -30,7 +36,7 @@
         <!-- task description -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-align-left prefix light-blue-text darken-4"></i>
+                <i class="fas fa-align-left prefix cyan-text darken-4"></i>
                 <textarea id="task_description" name="task_description" minlength="5" 
                     maxlength="200" class="materialize-textarea validate" required></textarea>
                 <label for="task_description">Description</label>
@@ -39,7 +45,7 @@
         <!-- due date picker -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-calendar-alt prefix light-blue-text darken-4"></i>
+                <i class="fas fa-calendar-alt prefix cyan-text darken-4"></i>
                 <input id="due_date" name="due_date" type="text" class="datepicker" required>
                 <label for="due_date">Due Date</label>
             </div>
@@ -48,7 +54,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <div class="switch">
-                    <i class="fas fa-exclamation-circle prefix light-blue-text darken-4"></i>
+                    <i class="fas fa-exclamation-circle prefix cyan-text darken-4"></i>
                     <label for="is_urgent">
                         <input type="checkbox" id="is_urgent" name="is_urgent">
                         <span class="lever"></span>
@@ -60,7 +66,7 @@
         <!-- submit button -->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                <button type="submit" class="btn-large red lighten-5 black-text text-shadow">
                     Add Entry <i class="fas fa-plus-square right"></i>
                 </button>
             </div>

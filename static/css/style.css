@@ -28,10 +28,9 @@ body {
   }
   
   .feature {
-    color: rgb(0, 0, 0);
     background-color: rgb(250, 242, 244);
     border-radius: 50px 20px;
-    border: solid rgb(241, 238, 17);
+    border: solid 5px rgb(53, 39, 19);
     margin: 10px;
     padding: 15px;
     width: calc(33.33% - 20px);
@@ -49,7 +48,7 @@ body {
   }
   
   .calculator {
-    background-color: #fff;
+    background-color: #e3f5f8;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

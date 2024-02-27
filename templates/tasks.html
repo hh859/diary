@@ -2,18 +2,23 @@
 {% block content %}
 
 
-
-    <h3 class="light-blue-text text-darken-4 center-align">All Entries</h3>
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel lime lighten-5">
+            <h3 class="light-blue-text text-darken-4 center-align">All Entries</h3>
+        </div>
+    </div>
+</div>
 
 
     <ul class="collapsible">
         {% for task in tasks %}
         <li>
-            <div class="collapsible-header white-text cyan lighten-3 text-shadow">
+            <div class="collapsible-header teal darken-4-text teal lighten-3 lighten-3">
                 <div class="col s3">
                     <i class="fas fa-caret-down"></i>
-                    <a href="" class="btn-small green-accent-4">Done</a>
-                    <a href="{{ url_for('edit_task', task_id=task._id)}}" class="btn-small green-accent-4">Edit</a>
+                    <a href="" class="btn-small lime darken-2">Done</a>
+                    <a href="{{ url_for('edit_task', task_id=task._id)}}" class="btn-small lime darken-3">Edit</a>
                 </div>
                 <div class="col s9">
                     <strong>{{ task.task_name }}</strong> : {{ task.due_date }}
@@ -23,7 +28,7 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="collapsible-body">
+            <div class="collapsible-body lime lighten-5">
                 <strong>{{ task.category_name }}</strong>
                 <p>{{ task.task_description }}</p>
                 <p><em>by: {{ task.created_by }}</em></p>
