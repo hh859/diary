@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
@@ -10,5 +11,24 @@
             </div>
         </div>
     </div>
+
+    <h3 class="center-align light-blue-text text-darken-4">
+        BMI Calculator
+    </h3>
+    <div class="calculator">
+        <div class="input-group">
+            <label for="weight">Weight (kg):</label>
+            <input type="text" id="weight">
+        </div>
+        <div class="input-group">
+            <label for="height">Height (cm):</label>
+            <input type="text" id="height">
+        </div>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <button class="clear-button" onclick="clearResults()">Clear</button>
+        <div id="result"></div>
+    </div>
+
+    
 
 {% endblock %}

@@ -42,4 +42,38 @@ $(document).ready(function () {
 });
 
 
+function calculateBMI() {
+    var weightInput = document.getElementById("weight").value;
+    var heightInput = document.getElementById("height").value;
 
+    // Convert height from cm to meters
+    var heightInMeters = heightInput / 100;
+
+    // Calculate BMI
+    var bmi = weightInput / (heightInMeters * heightInMeters);
+
+    // Display result
+    var resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "<h2>Your BMI is: " + bmi.toFixed(2) + "</h2>";
+
+    // Interpret BMI
+    var interpretation = "";
+    if (bmi < 18.5) {
+      interpretation = "Underweight";
+    } else if (bmi >= 18.5 && bmi < 25) {
+      interpretation = "Normal weight";
+    } else if (bmi >= 25 && bmi < 30) {
+      interpretation = "Overweight";
+    } else {
+      interpretation = "Obese";
+    }
+    resultDiv.innerHTML += "<p>Interpretation: " + interpretation + "</p>";
+    }
+
+    function clearResults() {
+        document.getElementById("result").innerHTML = "";
+  }
+
+
+
+  
